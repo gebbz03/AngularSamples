@@ -1,0 +1,42 @@
+-----------------------------------------------------------------
+import { Component } from '@angular/core';
+import Swal  from "sweetalert2";
+
+@Component({
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.css']
+})
+export class AppComponent {
+  
+  task={
+    title: 'Review Applications',
+    assignee:{
+
+      name: 'Gebb Ebero'
+    }
+  }
+}
+
+-----------------------------------------------------------------
+
+<span>
+    {{ task.assignee.name }}
+</span>
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+ task={
+    title: 'Review Applications',
+    assignee:null
+  }
+  -----------------------------------------------------------------
+
+<span *ngIf="task.assignee">
+    {{ task.assignee.name }}
+</span>
+
+-----------------------------------------------------------------
+<span>
+    {{ task.assignee?.name }}
+</span>
