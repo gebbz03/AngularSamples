@@ -1,0 +1,60 @@
+--------------------------------------------------------------
+Step 1; ng g d input-format
+
+--------------------------------------------------------------
+input-format.directive.ts////////
+
+import { Directive, HostListener, ElementRef } from '@angular/core';
+
+@Directive({
+  selector: '[appInputFormat]'
+})
+export class InputFormatDirective {
+
+  constructor(private el: ElementRef) { }
+
+  @HostListener('blur') onBlur(){
+  let value: string=this.el.nativeElement.value;
+  this.el.nativeElement.value=value.toLowerCase();
+  }
+  
+ 
+
+}
+-----------------------------------------------------------------
+app.component.html
+
+<input type="text" appInputFormat>
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+import { Directive, HostListener, ElementRef, Input } from '@angular/core';
+
+@Directive({
+  selector: '[appInputFormat]'
+})
+export class InputFormatDirective {
+
+  @Input('appInputFormat') format;
+  constructor(private el: ElementRef) { }
+
+  @HostListener('blur') onBlur(){
+
+  let value: string=this.el.nativeElement.value;
+  if(this.format == 'lowercase')
+
+  this.el.nativeElement.value=value.toLowerCase();
+
+  else
+
+  this.el.nativeElement.value=value.toUpperCase();
+
+  }
+  
+ 
+
+}
+-----------------------------------------------------------------
+
+<input type="text" [appInputFormat]="'uppercase'">
