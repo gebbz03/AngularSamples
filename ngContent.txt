@@ -1,0 +1,29 @@
+//////////////////////////////////////////////////////////////
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">
+  <ng-content select=".heading1">
+
+  </ng-content>
+    </h5>
+    <h6 class="card-subtitle mb-2 text-muted">
+    <ng-content select=".body1">
+
+    </ng-content>
+
+    </h6>
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <a href="#" class="card-link">Card link</a>
+    <a href="#" class="card-link">Another link</a>
+  </div>
+</div>
+
+
+<button class="btn btn-success">Save</button>
+
+///////////////////////////////////////////////////////////////////////////////
+
+<bootstrap-panel>
+    <div class="heading1">Title</div>
+    <div class="body1">Subtitle</div>
+</bootstrap-panel>

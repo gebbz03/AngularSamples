@@ -1,0 +1,55 @@
+//v1
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+<input (keyup.enter)="onKeyUp($event)" />
+
+    `
+
+})
+
+export class TestComponent {
+    
+
+    onKeyUp($event){
+
+ console.log($event.target.value);
+    }
+
+}
+
+/////////////////////////////////////////////////////////////////////////v2
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+<input #email (keyup.enter)="onKeyUp(email.value)" />
+
+    `
+
+})
+
+export class TestComponent {
+    
+
+    onKeyUp(email){
+
+ console.log(email);
+    }
+
+}

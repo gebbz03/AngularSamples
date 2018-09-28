@@ -1,0 +1,62 @@
+////////////////////////////////////////////////////////////////v1
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+<input [value]="email" (keyup.enter)="email =$event.target.value;  onKeyUp()" />
+
+    `
+
+})
+
+export class TestComponent {
+ email="ge@gmail.com";   
+
+    onKeyUp(){
+
+ console.log(this.email);
+    }
+
+}
+
+////////////////////////////////////////////////////////////////v1
+
+app.module.ts
+
+import { FormsModule } from "@angular/forms";
+
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+
+
+<input [(ngModel)]="email" (keyup.enter)="onKeyUp()" />
+
+    `
+
+})
+
+export class TestComponent {
+ email="ge@gmail.com";   
+
+    onKeyUp(){
+
+ console.log(this.email);
+    }
+
+}

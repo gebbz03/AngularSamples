@@ -1,0 +1,86 @@
+//V1
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+
+ <button (click)="onSave()">Close</button>
+
+    `
+
+})
+
+export class TestComponent {
+
+ 
+    onSave(){
+
+        console.log("Button was clicked");
+    }
+
+
+}
+
+
+//V2
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+
+ <button (click)="onSave($event)">Close</button>
+
+    `
+
+})
+
+export class TestComponent {
+
+ 
+    onSave($event){
+
+        console.log("Button was clicked",$event);
+    }
+
+
+}
+
+
+//v3
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+<div (click)="onDiv()">
+ <button (click)="onSave($event)">Close</button>
+ </div>
+
+    `
+
+})
+
+export class TestComponent {
+
+
+
+    onDiv(){
+        console.log("Div was clicked");
+    }
+
+    onSave($event){
+        $event.stopPropagation();
+        console.log("Button was clicked",$event);
+    }
+
+
+}

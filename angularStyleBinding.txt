@@ -1,0 +1,10 @@
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+
+ <button [style.background]="isActive ? 'blue' : 'white'">Close</button>
+
+    `
+
+})

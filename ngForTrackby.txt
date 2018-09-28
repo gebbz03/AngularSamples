@@ -1,0 +1,40 @@
+loadCourses(){
+  this.courses=[
+    {id:1,name:'Course 1'},
+    {id:2,name:'Course 2'},
+    {id:3,name:'Course 3'}
+  ];
+
+}
+
+----------------------------------------------------------------------
+
+<button (click)="loadCourses()" class="btn btn-primary">Load Courses</button>
+<ul>
+    <li *ngFor="let tco of courses; even as isEven">
+             {{ tco.name }}
+             
+            
+    </li>
+</ul>
+
+----------------------------------------------------------------------------
+----------------------------------------------------------------------------
+
+
+trackCourse(index,course){
+  return course ? course.id: undefined;
+
+
+}
+
+--------------------------------------------------------------------------
+
+<button (click)="loadCourses()" class="btn btn-primary">Load Courses</button>
+<ul>
+    <li *ngFor="let tco of courses; trackBy: trackCourse">
+             {{ tco.name }}
+             
+            
+    </li>
+</ul>

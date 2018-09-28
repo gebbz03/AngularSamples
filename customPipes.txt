@@ -1,0 +1,46 @@
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+{{ text | summary:16 }}
+    `
+
+})
+
+export class TestComponent {
+
+text="Lorem ipsum sadasd sadsaasd asdasdasd asdasda asdasd asdasdas asdas dasdsaddf sdfsd fsdf sdfdfs ";
+}
+
+
+////////////////////////////////////////////////////////////////////////
+
+summary.pipe.ts
+
+
+
+
+import { Pipe, PipeTransform} from '@angular/core';
+
+
+@Pipe({
+    name: 'summary'
+})
+export class SummaryPipe implements PipeTransform{
+    transform(value: string,limit?:number){
+
+        if(!value)
+        return null;
+
+        let actualLimit =(limit) ? limit :20;
+
+        return value.substr(0, actualLimit) + '...';
+
+    }
+}

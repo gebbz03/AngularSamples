@@ -1,0 +1,38 @@
+uppercase | lowercase | number | number: '1.2-3' |
+currency | currency:'AUD' | currency:'AUD':true  | 
+currency:'AUD':true:'3.2-2' | date:'shortDate'
+
+
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+{{ tc.title | uppercase }} <br />
+{{ tc.students | number }} <br />
+{{ tc.rating | number:'1.2-3' }} <br />
+{{ tc.price | currency:'AUD':true:'3.2-2' }} <br />
+{{ tc.releaseDate | date:'shortDate' }} <br />
+
+    `
+
+})
+
+export class TestComponent {
+
+
+    tc={
+        title: "The Complete Angular Course",
+        rating: 4.2734,
+        students: 2000,
+        price: 100.50,
+        releaseDate: new Date(2018,3,1)
+    }
+
+}

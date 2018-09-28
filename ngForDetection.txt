@@ -1,0 +1,61 @@
+///////////////////////////////////////////////////////////
+
+onAdd(){
+
+  this.courses.push({ id:4,name:'ICE'});
+
+}
+-------------------------------------------
+
+<button (click)="onAdd()" class="btn btn-success">ADD</button>
+
+<ul>
+    <li *ngFor="let tco of courses; even as isEven">
+             {{ tco.name }}
+
+             <span *ngIf="isEven">
+                (EVEN)
+             </span>
+    </li>
+</ul>
+
+-----------------------------------------------
+-----------------------------------------------
+onRemove(course){
+
+  let indexx=this.courses.indexOf(course);
+  this.courses.splice(indexx,1);
+
+}
+----------------------------------------------
+
+<button (click)="onAdd()" class="btn btn-success">ADD</button>
+
+<ul>
+    <li *ngFor="let tco of courses; even as isEven">
+             {{ tco.name }}
+             <button (click)="onRemove(course)" class="btn btn-danger">Remove</button>
+
+            
+    </li>
+</ul>
+--------------------------------------------------------------
+--------------------------------------------------------------
+onChange(course){
+
+  course.name="UPDATED";
+  
+  }
+  
+  -------------------------------------------------------------
+  
+  
+
+<ul>
+    <li *ngFor="let tco of courses; even as isEven">
+             {{ tco.name }}
+             <button (click)="onChange(tco)" class="btn btn-warning">Edit</button>
+
+            
+    </li>
+</ul>

@@ -1,0 +1,57 @@
+//v1
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+<input (keyup)="onKeyUp($event)" />
+
+    `
+
+})
+
+export class TestComponent {
+    
+
+    onKeyUp($event){
+
+if($event.keyCode === 13) console.log("ENTER was pressed");
+    }
+
+}
+
+
+//v2
+
+
+
+
+import { Component } from "@angular/core";
+import { TestService } from "./test.service";
+
+
+@Component({
+    selector: 'tcourse',
+    template: `
+        
+<input (keyup.enter)="onKeyUp()" />
+
+    `
+
+})
+
+export class TestComponent {
+    
+
+    onKeyUp(){
+
+ console.log("ENTER was pressed");
+    }
+
+}
